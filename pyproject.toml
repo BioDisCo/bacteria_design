@@ -1,0 +1,63 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs", "hatch-requirements-txt"]
+build-backend = "hatchling.build"
+
+[project]
+name = "multiplier"
+dynamic = ["version", "dependencies"]
+requires-python = ">=3.10"
+authors = [{ name = "Thomas Nowak", email = "thomas@thomasnowak.net" }]
+maintainers = [{ name = "Thomas Nowak", email = "thomas@thomasnowak.net" }]
+description = "A Python package that can multiply"
+readme = "README.md"
+license = { file = "LICENSE" }
+keywords = ["multiplication", "numbers"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+]
+
+[tool.hatch.metadata.hooks.requirements_txt]
+files = ["requirements.txt"]
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.pyright]
+venvPath = "."
+venv = "venv"
+
+[tool.ruff]
+line-length = 120
+
+fix = true
+
+lint.pydocstyle.convention = "google"
+
+format.docstring-code-format = true
+format.docstring-code-line-length = 120
+
+lint.select = ["ALL"]
+
+lint.ignore = ["COM812", "ISC001"]
+
+lint.per-file-ignores = { "**/examples/*" = [
+  "ANN",
+  "D",
+  "INP001",
+  "T201",
+], "**/tests/**/*" = [
+  "ANN",
+  "D",
+  "INP001",
+  "PLC1901",
+  "PLR2004",
+  "PLR6301",
+  "S",
+  "TID252",
+] }
+
+lint.flake8-tidy-imports.ban-relative-imports = "all"
+
+lint.flake8-pytest-style.fixture-parentheses = false
+lint.flake8-pytest-style.mark-parentheses = false
