@@ -3,15 +3,15 @@ requires = ["hatchling", "hatch-vcs", "hatch-requirements-txt"]
 build-backend = "hatchling.build"
 
 [project]
-name = "multiplier"
+name = "bacteria_design"
 dynamic = ["version", "dependencies"]
-requires-python = ">=3.10"
-authors = [{ name = "Thomas Nowak", email = "thomas@thomasnowak.net" }]
-maintainers = [{ name = "Thomas Nowak", email = "thomas@thomasnowak.net" }]
-description = "A Python package that can multiply"
+requires-python = ">=3.12"
+authors = [{ name = "Matthias Függer", email = "mfuegger@lmf.cnrs.fr" }, { name = "Thomas Nowak", email = "thomas@thomasnowak.net" }]
+maintainers = [{ name = "Matthias Függer", email = "mfuegger@lmf.cnrs.fr" }, { name = "Thomas Nowak", email = "thomas@thomasnowak.net" }]
+description = "Computational engineering library for the design of bacteria"
 readme = "README.md"
 license = { file = "LICENSE" }
-keywords = ["multiplication", "numbers"]
+keywords = ["bacteria", "design"]
 classifiers = [
   "Development Status :: 4 - Beta",
   "Programming Language :: Python",
